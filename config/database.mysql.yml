@@ -1,14 +1,12 @@
 development:
   adapter: mysql2
   database: bwi_store_development
-  encoding: unicode
-  username: chris
+  username: bwi
   password: ""
 
 test:
   adapter: mysql2
   database: bwi_store_test
-  encoding: unicode
-  username: chris
+  username: bwi
   password: ""
 

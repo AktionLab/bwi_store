@@ -26,6 +26,15 @@ module BwiStore
       Dir.glob(File.join(File.dirname(__FILE__), "../app/overrides/*.rb")) do |c|
         Rails.application.config.cache_classes ? require(c) : load(c)
       end
+
+      begin
+        [
+          Calculator::AdvancedFlatPercent,
+          Calculator::PerVariantPricing
+        ].each {|c| UserGroup.register_calculator(c)}
+      rescue Exception => e
+        $stderr.puts "Error registering user group calculators"
+      end
     end
 
     # Settings in config/environments/* take precedence over those specified here.
@@ -41,7 +50,7 @@ module BwiStore
 
     # Activate observers that should always be running.
     # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
-    config.active_record.schema_format = :sql
+    # config.active_record.schema_format = :sql
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
