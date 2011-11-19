@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.1'
 gem 'jquery-rails'
 gem 'unicorn'
-gem 'pg'
+gem 'mysql2'
 gem 'spree', git: 'http://github.com/spree/spree.git', branch: '0-70-stable'
 gem 'memcache-client'
 
@@ -18,6 +18,7 @@ group :development do
   gem 'ruby-debug19', require: 'ruby-debug'
   gem 'capistrano'
   gem 'capistrano-ext'
+  #gem 'bz-cap-recipes', :git => "git://github.com/BZLabs/bz_cap_recipes.git"
 end
 
 group :test do
