@@ -3,7 +3,7 @@ class UserGroup < ActiveRecord::Base
   has_many :user_groups_variants
   has_many :variants, :through => :user_groups_variants
 
-  validates :name => :presence => true
+  validates :name, :presence => true
 
   calculated_adjustments
 
