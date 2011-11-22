@@ -4,7 +4,8 @@ gem 'rails', '3.1.1'
 gem 'jquery-rails'
 gem 'unicorn'
 gem 'mysql2'
-gem 'spree', git: 'http://github.com/spree/spree.git', branch: '0-70-stable'
+#gem 'spree', git: 'http://github.com/spree/spree.git', branch: '0-70-stable'
+gem 'spree', git: 'http://github.com/spree/spree.git', ref: 'bf7a077'
 gem 'memcache-client'
 
 group :assets do
