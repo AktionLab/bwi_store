@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111119144658) do
+ActiveRecord::Schema.define(:version => 20111122173908) do
 
   create_table "activators", :force => true do |t|
     t.string   "description"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(:version => 20111119144658) do
     t.datetime "updated_at"
     t.string   "state_name"
     t.string   "alternative_phone"
+    t.integer  "user_id"
+    t.datetime "deleted_at"
   end
 
   add_index "addresses", ["firstname"], :name => "index_addresses_on_firstname"
