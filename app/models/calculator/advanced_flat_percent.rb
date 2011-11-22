@@ -1,57 +1,55 @@
-module Calculator
-  class AdvancedFlatPercent < ::Calculator
-    preference :flat_percent, :decimal, :default => 0
-    preference :based_on_cost_price, :boolean, :default => false
+class Calculator::AdvancedFlatPercent < Calculator
+  preference :flat_percent, :decimal, :default => 0
+  preference :based_on_cost_price, :boolean, :default => false
 
-    def self.description
-      I18n.t("advanced_flat_percent")
+  def self.description
+    I18n.t("advanced_flat_percent")
+  end
+
+  def description
+    if self.preferred_based_on_cost_price
+      "#{I18n.t(:cost_price)} + #{self.preferred_flat_percent}%"
+    else
+      "#{I18n.t(:price)} - #{self.preferred_flat_percent}%"
     end
+  end
 
-    def description
-      if self.preferred_based_on_cost_price
-        "#{I18n.t(:cost_price)} + #{self.preferred_flat_percent}%"
-      else
-        "#{I18n.t(:price)} - #{self.preferred_flat_percent}%"
-      end
-    end
+  def self.register
+    super
+    UserGroup.register_calculator(self)
+  end
 
-    def self.register
-      super
-      UserGroup.register_calculator(self)
-    end
+  def compute(object)
+    return unless object.present? && object.line_items.present? && object.user.present?
 
-    def compute(object)
-      return unless object.present? && object.line_items.present? && object.user.present?
+    part = self.preferred_flat_percent.abs / 100.0
+    item_total = object.line_items.map(&:amount).sum
 
-      part = self.preferred_flat_percent.abs / 100.0
-      item_total = object.line_items.map(&:amount).sum
-
-      if self.preferred_based_on_cost_price
-        item_cost_price_total = object.line_items.map do |li|
-          if !li.variant.cost_price.nil? && li.variant.cost_price > 0
-            li.variant.cost_price * li.quantity
-          else
-            li.amount
-          end
-        end.sum
-        (item_cost_price_total * (1.0 + part) - item_total).round(2)
-      else
-        (item_total * (1.0 - part)).round(2)
-      end
-    end
-    
-    def compute_item(variant)
-      part = self.preferred_flat_percent.abs / 100.0
-
-      if self.preferred_based_on_cost_price
-        if !variant.cost_price.nil? && variant.cost_price > 0
-          variant.cost_price * (1.0 + part)
+    if self.preferred_based_on_cost_price
+      item_cost_price_total = object.line_items.map do |li|
+        if !li.variant.cost_price.nil? && li.variant.cost_price > 0
+          li.variant.cost_price * li.quantity
         else
-          variant.price
+          li.amount
         end
+      end.sum
+      (item_cost_price_total * (1.0 + part) - item_total).round(2)
+    else
+      (item_total * (1.0 - part)).round(2)
+    end
+  end
+  
+  def compute_item(variant)
+    part = self.preferred_flat_percent.abs / 100.0
+
+    if self.preferred_based_on_cost_price
+      if !variant.cost_price.nil? && variant.cost_price > 0
+        variant.cost_price * (1.0 + part)
       else
-        variant.price * (1.0 - part)
+        variant.price
       end
+    else
+      variant.price * (1.0 - part)
     end
   end
 end
