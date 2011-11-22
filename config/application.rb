@@ -26,15 +26,14 @@ module BwiStore
       Dir.glob(File.join(File.dirname(__FILE__), "../app/overrides/*.rb")) do |c|
         Rails.application.config.cache_classes ? require(c) : load(c)
       end
+    end
 
-      begin
-        [
-          Calculator::AdvancedFlatPercent,
-          Calculator::PerVariantPricing
-        ].each {|c| UserGroup.register_calculator(c)}
-      rescue Exception => e
-        $stderr.puts "Error registering user group calculators"
-      end
+    initializer "user_group.calculators" do |app|
+      Spree::Environment::Calculators.send :attr_accessor, :user_groups
+      app.config.spree.calculators.user_groups = [
+        Calculator::AdvancedFlatPercent,
+        Calculator::PerVariantPricing
+      ]
     end
 
     # Settings in config/environments/* take precedence over those specified here.
