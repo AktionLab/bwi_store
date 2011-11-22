@@ -1,4 +1,5 @@
 BwiStore::Application.routes.draw do
+  #root :to => 'taxons#show', :id => 'brand'
   namespace :admin do
     resources :user_groups do
       member do
