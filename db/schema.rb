@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111122173908) do
+ActiveRecord::Schema.define(:version => 20111201020037) do
 
   create_table "activators", :force => true do |t|
     t.string   "description"
@@ -121,6 +121,16 @@ ActiveRecord::Schema.define(:version => 20111122173908) do
     t.string   "gateway_payment_profile_id"
   end
 
+  create_table "flexi_shipping_rates", :force => true do |t|
+    t.integer  "shipping_category_id"
+    t.integer  "zone_id"
+    t.decimal  "first_item_price",      :precision => 8, :scale => 2
+    t.decimal  "additional_item_price", :precision => 8, :scale => 2
+    t.integer  "max_items",                                           :default => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "gateways", :force => true do |t|
     t.string   "type"
     t.string   "name"
@@ -227,6 +237,26 @@ ActiveRecord::Schema.define(:version => 20111122173908) do
   end
 
   add_index "orders", ["number"], :name => "index_orders_on_number"
+
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "show_in_header",   :default => false, :null => false
+    t.boolean  "show_in_footer",   :default => false, :null => false
+    t.string   "foreign_link"
+    t.integer  "position",         :default => 1,     :null => false
+    t.boolean  "visible",          :default => true
+    t.string   "meta_keywords"
+    t.string   "meta_description"
+    t.string   "layout"
+    t.boolean  "show_in_sidebar",  :default => false, :null => false
+    t.string   "meta_title"
+  end
+
+  add_index "pages", ["slug"], :name => "index_pages_on_slug"
 
   create_table "payment_methods", :force => true do |t|
     t.string   "type"

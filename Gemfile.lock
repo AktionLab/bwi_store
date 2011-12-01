@@ -1,45 +1,55 @@
 GIT
   remote: http://github.com/spree/spree.git
-  revision: bf7a0771492ca5000276e503c83b298d16e9bf3a
-  ref: bf7a077
+  revision: 2169af5843fcbd07452d0f3aa809d75b20ef815d
+  ref: 2169af5843fcbd07452d0f3aa809d75b20ef815d
   specs:
-    spree (0.70.1)
-      spree_api (= 0.70.1)
-      spree_auth (= 0.70.1)
-      spree_core (= 0.70.1)
-      spree_dash (= 0.70.1)
-      spree_promo (= 0.70.1)
-      spree_sample (= 0.70.1)
-    spree_api (0.70.1)
-      spree_auth (= 0.70.1)
-      spree_core (= 0.70.1)
-    spree_auth (0.70.1)
+    spree (0.70.3)
+      spree_api (= 0.70.3)
+      spree_auth (= 0.70.3)
+      spree_core (= 0.70.3)
+      spree_dash (= 0.70.3)
+      spree_promo (= 0.70.3)
+      spree_sample (= 0.70.3)
+    spree_api (0.70.3)
+      spree_auth (= 0.70.3)
+      spree_core (= 0.70.3)
+    spree_auth (0.70.3)
       cancan (= 1.6.5)
       devise (= 1.4.7)
-      spree_core (= 0.70.1)
-    spree_core (0.70.1)
+      spree_core (= 0.70.3)
+    spree_core (0.70.3)
       activemerchant (= 1.17.0)
       acts_as_list (= 0.1.4)
       deface (>= 0.7.0)
       faker (= 1.0.0)
-      highline (= 1.5.1)
+      highline (= 1.6.2)
       jquery-rails (>= 1.0.14)
       kaminari (>= 0.12.4)
       meta_search (= 1.1.1)
       nested_set (= 1.6.8)
       paperclip (= 2.4.1)
-      rails (= 3.1.1)
+      rails (>= 3.1.1, <= 3.1.3)
       rd_find_by_param (= 0.1.1)
       rd_resource_controller
       state_machine (= 1.0.1)
       stringex (= 1.0.3)
-    spree_dash (0.70.1)
-      spree_core (= 0.70.1)
-    spree_promo (0.70.1)
-      spree_auth (= 0.70.1)
-      spree_core (= 0.70.1)
-    spree_sample (0.70.1)
-      spree_core (= 0.70.1)
+    spree_dash (0.70.3)
+      spree_core (= 0.70.3)
+    spree_promo (0.70.3)
+      spree_auth (= 0.70.3)
+      spree_core (= 0.70.3)
+    spree_sample (0.70.3)
+      spree_core (= 0.70.3)
+
+GIT
+  remote: http://github.com/spree/spree_static_content.git
+  revision: dc299ba44987192e8f34a8800f5cfe044ac92460
+  branch: 0-70-stable
+  specs:
+    spree_static_content (0.70.3)
+      formtastic
+      spree_auth (>= 0.70.1)
+      spree_core (>= 0.70.1)
 
 GEM
   remote: http://rubygems.org/
@@ -86,14 +96,6 @@ GEM
       builder (>= 2.0.0)
     builder (3.0.0)
     cancan (1.6.5)
-    capistrano (2.9.0)
-      highline
-      net-scp (>= 1.0.0)
-      net-sftp (>= 2.0.0)
-      net-ssh (>= 2.0.14)
-      net-ssh-gateway (>= 1.1.0)
-    capistrano-ext (1.2.1)
-      capistrano (>= 1.0.0)
     cocaine (0.2.0)
     coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
@@ -103,7 +105,7 @@ GEM
       execjs
     coffee-script-source (1.1.3)
     columnize (0.3.4)
-    deface (0.7.1)
+    deface (0.7.2)
       nokogiri (~> 1.5.0)
       rails (>= 3.0.9)
     devise (1.4.7)
@@ -115,7 +117,9 @@ GEM
       multi_json (~> 1.0)
     faker (1.0.0)
       i18n (~> 0.4)
-    highline (1.5.1)
+    formtastic (2.0.2)
+      rails (~> 3.0)
+    highline (1.6.2)
     hike (1.2.1)
     i18n (0.6.0)
     jquery-rails (1.0.18)
@@ -144,13 +148,6 @@ GEM
     nested_set (1.6.8)
       activerecord (>= 3.0.0)
       railties (>= 3.0.0)
-    net-scp (1.0.4)
-      net-ssh (>= 1.99.1)
-    net-sftp (2.0.5)
-      net-ssh (>= 2.0.9)
-    net-ssh (2.2.1)
-    net-ssh-gateway (1.1.0)
-      net-ssh (>= 1.99.1)
     nokogiri (1.5.0)
     orm_adapter (0.0.5)
     paperclip (2.4.1)
@@ -209,6 +206,8 @@ GEM
       railties (~> 3.1.0)
       sass (~> 3.1.10)
       tilt (~> 1.3.2)
+    spree_flexi_rate_shipping (0.3.0.beta)
+      spree_core (>= 0.70.1)
     sprockets (2.0.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -239,8 +238,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  capistrano
-  capistrano-ext
   coffee-rails (~> 3.1.1)
   jquery-rails
   memcache-client
@@ -249,6 +246,8 @@ DEPENDENCIES
   ruby-debug19
   sass-rails (~> 3.1.4)
   spree!
+  spree_flexi_rate_shipping (= 0.3.0.beta)
+  spree_static_content!
   therubyracer
   turn
   uglifier (>= 1.0.3)

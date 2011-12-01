@@ -11,5 +11,5 @@
  *= require store/spree_dash
 
  *= require_self
- *= require screen
+ *= require store/screen
 */
