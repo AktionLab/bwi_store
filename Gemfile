@@ -18,9 +18,9 @@ end
 
 group :development do
   gem 'ruby-debug19', require: 'ruby-debug'
-  #gem 'capistrano'
-  #gem 'capistrano-ext'
+  gem 'capistrano'
   #gem 'bz-cap-recipes', :git => "git://github.com/BZLabs/bz_cap_recipes.git"
+  gem 'bz-cap-recipes', path: '/home/chris/code/bz_cap_recipes'
 end
 
 group :test do

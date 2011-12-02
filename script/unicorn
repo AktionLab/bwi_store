@@ -2,9 +2,9 @@
 
 set -e
 
-[ -z "$RAILS_ENV" ] && RAILS_ENV="production"
+test -z "$RAILS_ENV" && RAILS_ENV=production
 
-CMD="bundle exec unicorn -c config/unicorn.rb -E ${RAILS_ENV} -D"
+CMD="bundle exec unicorn -c config/unicorn.rb -E $RAILS_ENV -D
 export PID=tmp/pids/unicorn.pid
 export OLD_PID="$PID.oldbin"
 
@@ -17,12 +17,11 @@ haz_proc () {
 }
 
 start () {
-  # Check for PID or running process
   if haz_proc "$PID"; then
     echo "Already Running"
     exit 0
   fi
-  
+
   echo "Starting"
   $CMD
 }
@@ -31,19 +30,18 @@ stop () {
   if haz_proc "$PID"; then
     echo "Stopping Process"
     kill -QUIT `cat $PID`
-  else 
+  else
     echo "Not Running"
   fi
 }
 
 restart () {
-  if haz_proc "$PID"; then 
+  if haz_proc "$PID"; then
     echo "Triggering Restart"
-    kill -USR2 `cat $PID`;
+    kill -USR2 `cat $PID`
     sleep 15
     if haz_proc "$OLD_PID"; then
-      echo "Restart complete, killing old master"
-      kill -QUIT `cat $OLD_PID`
+      echo "Restart in progress"
       exit 0
     else
       echo >&2 "Failed to restart, performing hard stop/start"
@@ -57,18 +55,9 @@ restart () {
 }
 
 case $1 in
-  start)
-    start
-    ;;
-  stop)
-    stop
-    ;;
-  restart)
-    restart
-    ;;
-  *)
-    echo >&2 "Usage: $0 <start|stop|restart>"
-    exit 1
-    ;;
+  start) start ;;
+  stop) stop ;;
+  restart) restart ;;
+  *) echo >&2 "Usage: $0 <start|stop|restart>" && exit 1 ;;
 esac
 

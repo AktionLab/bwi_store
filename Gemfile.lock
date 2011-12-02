@@ -51,6 +51,11 @@ GIT
       spree_auth (>= 0.70.1)
       spree_core (>= 0.70.1)
 
+PATH
+  remote: /home/chris/code/bz_cap_recipes
+  specs:
+    bz-cap-recipes (0.0.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -96,6 +101,12 @@ GEM
       builder (>= 2.0.0)
     builder (3.0.0)
     cancan (1.6.5)
+    capistrano (2.9.0)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
     cocaine (0.2.0)
     coffee-rails (3.1.1)
       coffee-script (>= 2.2.0)
@@ -148,6 +159,13 @@ GEM
     nested_set (1.6.8)
       activerecord (>= 3.0.0)
       railties (>= 3.0.0)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-sftp (2.0.5)
+      net-ssh (>= 2.0.9)
+    net-ssh (2.2.1)
+    net-ssh-gateway (1.1.0)
+      net-ssh (>= 1.99.1)
     nokogiri (1.5.0)
     orm_adapter (0.0.5)
     paperclip (2.4.1)
@@ -238,6 +256,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bz-cap-recipes!
+  capistrano
   coffee-rails (~> 3.1.1)
   jquery-rails
   memcache-client
