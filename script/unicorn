@@ -4,7 +4,7 @@ set -e
 
 test -z "$RAILS_ENV" && RAILS_ENV=production
 
-CMD="bundle exec unicorn -c config/unicorn.rb -E $RAILS_ENV -D
+CMD="bundle exec unicorn -c config/unicorn.rb -E $RAILS_ENV -D"
 export PID=tmp/pids/unicorn.pid
 export OLD_PID="$PID.oldbin"
 
