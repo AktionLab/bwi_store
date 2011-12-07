@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/BZLabs/bz_cap_recipes.git
+  revision: 1e54f23ee3087044543accdf84c5fe5e269864df
+  specs:
+    bz-cap-recipes (0.0.1)
+
+GIT
   remote: http://github.com/spree/spree.git
   revision: 2169af5843fcbd07452d0f3aa809d75b20ef815d
   ref: 2169af5843fcbd07452d0f3aa809d75b20ef815d
@@ -50,11 +56,6 @@ GIT
       formtastic
       spree_auth (>= 0.70.1)
       spree_core (>= 0.70.1)
-
-PATH
-  remote: /home/chris/code/bz_cap_recipes
-  specs:
-    bz-cap-recipes (0.0.1)
 
 GEM
   remote: http://rubygems.org/
@@ -115,7 +116,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.1.3)
-    columnize (0.3.4)
+    columnize (0.3.5)
     deface (0.7.2)
       nokogiri (~> 1.5.0)
       rails (>= 3.0.9)
@@ -124,7 +125,7 @@ GEM
       orm_adapter (~> 0.0.3)
       warden (~> 1.0.3)
     erubis (2.7.0)
-    execjs (1.2.9)
+    execjs (1.2.11)
       multi_json (~> 1.0)
     faker (1.0.0)
       i18n (~> 0.4)
@@ -133,10 +134,10 @@ GEM
     highline (1.6.2)
     hike (1.2.1)
     i18n (0.6.0)
-    jquery-rails (1.0.18)
+    jquery-rails (1.0.19)
       railties (~> 3.0)
       thor (~> 0.14)
-    json (1.6.1)
+    json (1.6.3)
     kaminari (0.12.4)
       rails (>= 3.0.0)
     kgio (2.6.0)
@@ -154,8 +155,8 @@ GEM
       activesupport (~> 3.1.0)
       polyamorous (~> 0.5.0)
     mime-types (1.17.2)
-    multi_json (1.0.3)
-    mysql2 (0.3.10)
+    multi_json (1.0.4)
+    mysql2 (0.3.11)
     nested_set (1.6.8)
       activerecord (>= 3.0.0)
       railties (>= 3.0.0)
@@ -218,7 +219,7 @@ GEM
       ruby-debug-base19 (>= 0.11.19)
     ruby_core_source (0.1.5)
       archive-tar-minitar (>= 0.5.2)
-    sass (3.1.10)
+    sass (3.1.11)
     sass-rails (3.1.5)
       actionpack (~> 3.1.0)
       railties (~> 3.1.0)
