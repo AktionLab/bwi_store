@@ -594,16 +594,30 @@ p img {
 	border-right: 1px solid #eeeeee;
 }
 
-.navigation-list {
+h3.taxonomy-root {
+	margin-bottom: 0 !important;
+}
+
+h3.taxonomy-root a {
+	color: #222 !important;
+  text-decoration: none;
+}
+
+.navigation-list,
+.taxons-list,
+h3.taxonomy-root {
 	list-style: none;
 	margin: 0 0 1.5em -15px;
 }
 
-.navigation-list li {
+.navigation-list li,
+.taxons-list li {
 	margin: 0;
 }
 
-.navigation-list li a {
+.navigation-list li a,
+.taxons-list li a,
+h3.taxonomy-root {
 	cursor: pointer !important;
 	text-decoration: none;
 	color: #333333;
@@ -615,38 +629,45 @@ p img {
 	overflow: hidden;
 }
 
-.navigation-list li a:hover {
-  background: image-url("menu-hover.png")
-	background: image-url("menu-hover.png") right center no-repeat;
+.navigation-list li a:hover,
+.taxons-list li a:hover {
+	background: url("/images/menu-hover.png") right center no-repeat;
 }
 
-.navigation-list li.current {
+.navigation-list li.current,
+.taxons-list li.current {
 	width: 200px;
 }
 
-.navigation-list li.current a {
+.navigation-list li.current a,
+.taxons-list li.current a,
+h3.taxonomy-root.current {
 	width: 180px;
-	background: image-url("menu-current.png") right center no-repeat;
+	background: url("/images/menu-current.png") right center no-repeat;
 	white-space: nowrap;
 	overflow: hidden;
 }
 
-.navigation-list li.current a.root {
+.navigation-list li.current a.root,
+.taxons-list li.current a.root,
+h3.taxonomy-root {
 	width: 183px;
 }
 
-.navigation-list a.root {
+.navigation-list a.root,
+.tasons-list a.root,
+h3.taxonomy-root {
 	color: #222222;
 	font-size: 1.5em;
 	text-indent: -5px;
 	line-height: 2.2em;
 }
 
-.breadcrumbs {
+#breadcrumbs {
 	margin-bottom: 1em;
 }
 
-.breadcrumbs ul {
+#breadcrumbs ul {
 	list-style-type: none;
 	margin: 0px;
 	padding: 0px;
@@ -656,30 +677,30 @@ p img {
 	overflow: auto;
 }
 
-.breadcrumbs ul li {
+#breadcrumbs ul li {
 	margin: 0px;
 	padding: 0px;
 	display: inline;
 }
 
-.breadcrumbs ul li {
+#breadcrumbs ul li {
 	line-height: 20px;
 	color: #666666;
 }
 
-.breadcrumbs ul li a {
+#breadcrumbs ul li a {
 	text-decoration: none;
 	padding: 5px 7px;
 	color: #666666;
 }
 
-.breadcrumbs ul li span {
+#breadcrumbs ul li span {
 	text-decoration: none;
 	padding: 5px 7px;
 	color: #666666;
 }
 
-.breadcrumbs ul li span {
+#breadcrumbs ul li span {
 	color: #333333;
 }
 
@@ -725,12 +746,12 @@ ul#nav-bar li {
 
 ul#nav-bar li.cart-indicator a {
 	padding-right: 40px;
-	background: transparent image-url("cart-empty_x32.png") center right no-repeat;
+	background: transparent url("cart-empty_x32.png") center right no-repeat;
 	display: block;
 }
 
 ul#nav-bar li.cart-indicator a.full {
-	background-image: image-url("cart-full_x32.png");
+	background-image: url("cart-full_x32.png");
 }
 
 ul#nav-bar-two {
@@ -858,13 +879,13 @@ ul#nav-bar-two li {
 }
 
 .flash.notice {
-	background: #ccddff image-url("shadow_top.png") 0px -50px repeat-x;
+	background: #ccddff url("shadow_top.png") 0px -50px repeat-x;
 	color: #556699;
 	border: 1px solid #99aacc;
 }
 
 .flash.errors {
-	background: #f4b4b4 image-url("shadow_top.png") 0px -50px repeat-x;
+	background: #f4b4b4 url("shadow_top.png") 0px -50px repeat-x;
 	color: #000000;
 	border: 1px solid #000000;
 }
@@ -876,7 +897,7 @@ ul#nav-bar-two li {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	background: #f4b4b4 image-url("shadow_top.png") 0px -50px repeat-x;
+	background: #f4b4b4 url("shadow_top.png") 0px -50px repeat-x;
 	color: #000000;
 	border: 1px solid #000000;
 }
@@ -902,7 +923,7 @@ ul#nav-bar-two li {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	background: #f4b4b4 image-url("shadow_top.png") 0px -50px repeat-x;
+	background: #f4b4b4 url("shadow_top.png") 0px -50px repeat-x;
 	color: #000000;
 	border: 1px solid #000000;
 }
@@ -980,7 +1001,7 @@ button, a.button, input.button {
 	-moz-border-radius: 0.3em;
 	-webkit-border-radius: 0.3em;
 	border-radius: 0.3em;
-	background: #efefef image-url("buttons/bg-button.png") center left repeat-x !important;
+	background: #efefef url("buttons/bg-button.png") center left repeat-x !important;
 	border-style: solid;
 	border-width: 1px !important;
 	border-color: #dddddd #999999 #999999 #dddddd !important;
@@ -1009,15 +1030,15 @@ button.primary, a.button.primary, input.button.primary {
 }
 
 button:hover {
-	background-image: image-url("buttons/bg-button-hover.png") !important;
+	background-image: url("buttons/bg-button-hover.png") !important;
 }
 
 a.button:hover {
-	background-image: image-url("buttons/bg-button-hover.png") !important;
+	background-image: url("buttons/bg-button-hover.png") !important;
 }
 
 input.button:hover {
-	background-image: image-url("buttons/bg-button-hover.png") !important;
+	background-image: url("buttons/bg-button-hover.png") !important;
 }
 
 button.large, a.button.large, input.button.large {
@@ -1201,12 +1222,13 @@ p button img {
 	padding: 5px;
 	border: 1px solid #dddddd;
 	position: relative;
+  overflow: hidden;
 }
 
 .product-listing li a {
-	display: block;
-	text-decoration: none;
-	color: #111111;
+display: block;
+text-decoration: none;
+color: #111111;
 }
 
 .product-listing li a.info {
@@ -1216,7 +1238,7 @@ p button img {
 	padding: 5px;
 	width: 150px;
 	min-height: 60px;
-	background: #ffffff image-url("shadow_top.png") 0px -35px repeat-x;
+	background: #ffffff url("shadow_top.png") 0px -35px repeat-x;
 	border-top: 1px solid #ffffff;
 }
 
@@ -1229,7 +1251,7 @@ p button img {
 }
 
 .product-listing li:hover a.info {
-	background: #1b1b1b image-url("bottom_shine.png") bottom left repeat-x;
+	background: #1b1b1b url("bottom_shine.png") bottom left repeat-x;
 	color: #ffffff;
 }
 
@@ -1358,6 +1380,7 @@ ul.thumbnails li.selected {
 #product-description {
 	display: inline;
 	float: left;
+  clear: both;
 	width: 400px;
 	margin-right: 10px;
 	padding-right: 24px;
@@ -1594,7 +1617,7 @@ table#cart h4 {
 }
 
 input.openid_url {
-	background: #ffffff image-url("openid-inputicon.gif") no-repeat scroll 0pt 50%;
+	background: #ffffff url("openid-inputicon.gif") no-repeat scroll 0pt 50%;
 	padding-left: 18px;
 	border: 1px solid #bbbbbb;
 	font-size: 1.5em;
@@ -1668,7 +1691,7 @@ ol.progress-steps li {
 	color: #999999;
 	background-position: top left;
 	background-repeat: no-repeat;
-	background-image: image-url("step-progress/incomplete-incomplete.gif");
+	background-image: url("step-progress/incomplete-incomplete.gif");
 }
 
 ol.progress-steps li span {
@@ -1693,11 +1716,11 @@ ol.progress-steps li.completed-first span {
 }
 
 ol.progress-steps li.current-first {
-	background-image: image-url("step-progress/current-first.gif");
+	background-image: url("step-progress/current-first.gif");
 }
 
 ol.progress-steps li.completed-first {
-	background-image: image-url("step-progress/completed-first.gif") !important;
+	background-image: url("step-progress/completed-first.gif") !important;
 }
 
 ol.progress-steps li.current {
@@ -1713,35 +1736,35 @@ ol.progress-steps li.current-last {
 }
 
 ol.progress-steps li.completed {
-	background-image: image-url("step-progress/completed-completed.gif");
+	background-image: url("step-progress/completed-completed.gif");
 }
 
 ol.progress-steps li.current {
-	background-image: image-url("step-progress/completed-current.gif");
+	background-image: url("step-progress/completed-current.gif");
 }
 
 ol.progress-steps li.current-last {
-	background-image: image-url("step-progress/completed-current.gif");
+	background-image: url("step-progress/completed-current.gif");
 }
 
 ol.progress-steps li.next {
-	background-image: image-url("step-progress/current-incomplete.gif");
+	background-image: url("step-progress/current-incomplete.gif");
 }
 
 ol.progress-steps li.next-last {
-	background-image: image-url("step-progress/current-incomplete.gif");
+	background-image: url("step-progress/current-incomplete.gif");
 }
 
 ol.progress-steps li.last span {
-	background-image: image-url("step-progress/incomplete-right.gif");
+	background-image: url("step-progress/incomplete-right.gif");
 }
 
 ol.progress-steps li.next-last span {
-	background-image: image-url("step-progress/incomplete-right.gif");
+	background-image: url("step-progress/incomplete-right.gif");
 }
 
 ol.progress-steps li.current-last span {
-	background-image: image-url("step-progress/current-right.gif");
+	background-image: url("step-progress/current-right.gif");
 }
 
 div#checkout {

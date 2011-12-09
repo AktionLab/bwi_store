@@ -1,0 +1,1 @@
+<h3 class='taxonomy-root <%= "current" if taxonomy.root.permalink == params[:id] %>'><%= link_to t(:shop_by_taxonomy, :taxonomy => taxonomy.name.singularize), "/t/" + taxonomy.root.permalink %></h3>

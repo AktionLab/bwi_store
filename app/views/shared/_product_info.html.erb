@@ -1,0 +1,4 @@
+<li id="product_<%= product.id %>" data-hook="products_list_item">
+  <%= link_to (product.name + content_tag(:span, product_price(product), :class => "price selling")).html_safe, product, :class => 'info' %>
+  <%= link_to small_image(product), product %>
+</li>
