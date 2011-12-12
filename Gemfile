@@ -5,7 +5,9 @@ gem 'jquery-rails'
 gem 'unicorn'
 gem 'mysql2'
 gem 'spree', git: 'http://github.com/spree/spree.git', ref: '2169af5843fcbd07452d0f3aa809d75b20ef815d'
-gem "spree_flexi_rate_shipping", "0.3.0.beta"
+#gem "spree_flexi_rate_shipping", "0.3.0.beta"
+#gem 'spree_flexi_rate_shipping', path: '/home/chris/code/spree/spree-flexi-rate-shipping'
+gem 'spree_flexi_rate_shipping', git: 'git://github.com/BZLabs/spree-flexi-rate-shipping.git'
 gem 'spree_static_content', git: 'http://github.com/spree/spree_static_content.git', branch: '0-70-stable'
 gem 'memcache-client'
 
@@ -17,6 +19,7 @@ group :assets do
 end
 
 group :development do
+  gem 'rails-dev-tweaks', '~> 0.5.1'
   gem 'ruby-debug19', require: 'ruby-debug'
   gem 'capistrano'
   gem 'bz-cap-recipes', :git => "git://github.com/BZLabs/bz_cap_recipes.git"
