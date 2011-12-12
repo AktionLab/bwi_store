@@ -6,7 +6,7 @@ GIT
 
 GIT
   remote: git://github.com/BZLabs/spree-flexi-rate-shipping.git
-  revision: 36de3bb9f49433a82845da2424f8b61b2f2c27cd
+  revision: 6207e37f66eefd7b5bf32ff2b2ed75c4f990a19f
   specs:
     spree_flexi_rate_shipping (0.3.0.beta)
       spree_core (>= 0.70.1)
