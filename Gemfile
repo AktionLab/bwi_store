@@ -10,7 +10,10 @@ gem 'spree', git: 'http://github.com/spree/spree.git', ref: '2169af5843fcbd07452
 gem 'spree_flexi_rate_shipping', git: 'git://github.com/BZLabs/spree-flexi-rate-shipping.git'
 gem 'spree_static_content', git: 'http://github.com/spree/spree_static_content.git', branch: '0-70-stable'
 gem 'memcache-client'
-gem 'airbrake'
+
+group :production do
+  gem 'airbrake'
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'
