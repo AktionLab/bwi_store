@@ -8,3 +8,4 @@ dump.sql
 public/spree
 *.bz2
 *.sql
+*.swp
