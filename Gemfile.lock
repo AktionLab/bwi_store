@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/BZLabs/bz_cap_recipes.git
-  revision: 1e54f23ee3087044543accdf84c5fe5e269864df
+  revision: 0252b90ba7a5b32b6d042e99cbad1822b2532033
   specs:
     bz-cap-recipes (0.0.1)
 
