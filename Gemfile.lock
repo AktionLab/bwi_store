@@ -101,6 +101,9 @@ GEM
     activesupport (3.1.1)
       multi_json (~> 1.0)
     acts_as_list (0.1.4)
+    airbrake (3.0.8)
+      activesupport
+      builder
     ansi (1.4.1)
     archive-tar-minitar (0.5.2)
     arel (2.2.1)
@@ -264,6 +267,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  airbrake
   bz-cap-recipes!
   capistrano
   coffee-rails (~> 3.1.1)

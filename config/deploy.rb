@@ -10,3 +10,9 @@ namespace :spree do
   end
 end
 
+require './config/boot'
+require 'airbrake/capistrano'
+require 'bz_labs/base'
+require 'bz_labs/mysql'
+require 'bz_labs/nginx'
+require 'bz_labs/unicorn'
