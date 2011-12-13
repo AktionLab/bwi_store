@@ -9,3 +9,28 @@ Deface::Override.new(:virtual_path  => "shared/_taxonomies",
                      :partial       => "shared/taxonomy_root_header",
                      :name          => "make_taxon_root_linkable",
                      :disabled      => false)
+
+Deface::Override.new(:virtual_path  => 'checkout/_confirm',
+                     :insert_top    => "[data-hook='buttons']",
+                     :partial       => 'checkout/continue_shopping_button',
+                     :name          => 'confirm_checkout_shopping_button')
+
+Deface::Override.new(:virtual_path  => 'checkout/_delivery',
+                     :insert_top    => "[data-hook='button']",
+                     :partial       => 'checkout/continue_shopping_button',
+                     :name          => 'delivery_checkout_shopping_button')
+
+Deface::Override.new(:virtual_path  => 'checkout/_payment',
+                     :insert_top    => "[data-hook='buttons']",
+                     :partial       => 'checkout/continue_shopping_button',
+                     :name          => 'payment_checkout_shopping_button')
+
+Deface::Override.new(:virtual_path  => 'products/_cart_form',
+                     :insert_bottom => 'dl#product-price',
+                     :partial       => 'products/sku_with_product_price',
+                     :name          => 'cart_form_sku_with_product_price')
+
+Deface::Override.new(:virtual_path  => 'orders/show',
+                     :insert_before => 'div#order > p',
+                     :partial       => 'orders/return_policy',
+                     :name          => 'orders_return_policy')
