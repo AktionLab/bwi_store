@@ -2,5 +2,5 @@
   <%= f.label :name %><br />
   <%= f.text_field :name %>
 <% end %>
-<%= render "admin/shared/calculator_fields", :f => f %>
+<%= render partial: "admin/shared/calculator_fields", locals: {f: f} %>
 

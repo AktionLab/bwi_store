@@ -1,11 +1,11 @@
-<%= render "admin/shared/configuration_menu %>
+<%= render "admin/shared/configuration_menu" %>
 
-<h1><%= t("editing_user_group) %></h1>
+<h1><%= t(:editing_user_group) %></h1>
 
-<%= render 'shared/error_messages', :target => @user_group %>
+<%= render 'shared/error_messages', target: @user_group %>
 
-<%= form_for (@user_group, :url => object_url, :html => ( :method => :put )) do |f| %>
-  <%= render :partial => "form", :locals => { :f => f } %>
-  <%= render :partial => "admin/shared/edit_resource_links" %>
+<%= form_for(@user_group, url: admin_user_group_url(@user_group), html: { method: :put }) do |f| %>
+  <%= render partial: 'form', locals: {f: f} %>
+  <%= render 'admin/shared/edit_resource_links' %>
 <% end %>
 

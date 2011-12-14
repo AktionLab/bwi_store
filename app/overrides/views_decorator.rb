@@ -34,3 +34,10 @@ Deface::Override.new(:virtual_path  => 'orders/show',
                      :insert_before => 'div#order > p',
                      :partial       => 'orders/return_policy',
                      :name          => 'orders_return_policy')
+
+Deface::Override.new(:virtual_path  => 'admin/shared/_tabs',
+                     :insert_after  => "code[erb-loud]:contains(':users')",
+                     :partial       => 'admin/shared/user_groups_tab',
+                     :name          => 'admin_user_groups_tab',
+                     :original      => '<%= tab :users %>')
+
