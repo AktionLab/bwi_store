@@ -9,6 +9,8 @@ gem 'spree', git: 'http://github.com/spree/spree.git', ref: '2169af5843fcbd07452
 #gem 'spree_flexi_rate_shipping', path: '/home/chris/code/spree/spree-flexi-rate-shipping'
 gem 'spree_flexi_rate_shipping', git: 'git://github.com/BZLabs/spree-flexi-rate-shipping.git'
 gem 'spree_static_content', git: 'http://github.com/spree/spree_static_content.git', branch: '0-70-stable'
+gem 'spree_batch_products', git: 'http://github.com/BZLabs/spree-batch-products.git'
+#gem 'spree_batch_products', path: '/home/chris/code/spree/spree-batch-products'
 gem 'memcache-client'
 
 group :production do

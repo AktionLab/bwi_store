@@ -12,6 +12,14 @@ GIT
       spree_core (>= 0.70.1)
 
 GIT
+  remote: http://github.com/BZLabs/spree-batch-products.git
+  revision: 5ea401607cf4fa1da7420e5ea45e9b762a720fe9
+  specs:
+    spree_batch_products (0.70.0)
+      spreadsheet (>= 0.6.5.4)
+      spree_core (>= 0.70.0)
+
+GIT
   remote: http://github.com/spree/spree.git
   revision: 2169af5843fcbd07452d0f3aa809d75b20ef815d
   ref: 2169af5843fcbd07452d0f3aa809d75b20ef815d
@@ -229,6 +237,7 @@ GEM
       columnize (>= 0.3.1)
       linecache19 (>= 0.5.11)
       ruby-debug-base19 (>= 0.11.19)
+    ruby-ole (1.2.11.2)
     ruby_core_source (0.1.5)
       archive-tar-minitar (>= 0.5.2)
     sass (3.1.11)
@@ -237,6 +246,8 @@ GEM
       railties (~> 3.1.0)
       sass (~> 3.1.10)
       tilt (~> 1.3.2)
+    spreadsheet (0.6.5.9)
+      ruby-ole (>= 1.0)
     sprockets (2.0.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -279,6 +290,7 @@ DEPENDENCIES
   ruby-debug19
   sass-rails (~> 3.1.4)
   spree!
+  spree_batch_products!
   spree_flexi_rate_shipping!
   spree_static_content!
   therubyracer
