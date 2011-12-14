@@ -41,3 +41,8 @@ Deface::Override.new(:virtual_path  => 'admin/shared/_tabs',
                      :name          => 'admin_user_groups_tab',
                      :original      => '<%= tab :users %>')
 
+Deface::Override.new(:virtual_path  => 'admin/users/_form',
+                     :insert_after  => "[data-hook='admin_user_form_roles']",
+                     :partial       => "admin/users/user_group",
+                     :name          => 'admin_user_groups_user_form')
+
