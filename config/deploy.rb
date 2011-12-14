@@ -15,7 +15,9 @@ namespace :spree do
 end
 
 require './config/boot'
-require 'airbrake/capistrano'
+if ENV['RAILS_ENV'] == 'production'
+  require 'airbrake/capistrano'
+end
 require 'bz_labs/base'
 require 'bz_labs/mysql'
 require 'bz_labs/nginx'
