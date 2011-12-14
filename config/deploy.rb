@@ -14,6 +14,14 @@ namespace :spree do
   end
 end
 
+if ENV['SKIP_ASSETS']
+  namespace :assets do
+    task :precompile do
+      # skip assets precompile
+    end
+  end
+end
+
 require './config/boot'
 if ENV['RAILS_ENV'] == 'production'
   require 'airbrake/capistrano'
