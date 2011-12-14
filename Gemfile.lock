@@ -13,7 +13,7 @@ GIT
 
 GIT
   remote: http://github.com/BZLabs/spree-batch-products.git
-  revision: 5ea401607cf4fa1da7420e5ea45e9b762a720fe9
+  revision: bb201587712d6a9b9ddd39358349ef7f2757ebae
   specs:
     spree_batch_products (0.70.0)
       spreadsheet (>= 0.6.5.4)
