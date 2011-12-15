@@ -17,6 +17,10 @@ group :production do
   gem 'airbrake'
 end
 
+group :production, :staging do
+  gem 'newrelic_rpm'
+end
+
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'
   gem 'coffee-rails', '~> 3.1.1'
