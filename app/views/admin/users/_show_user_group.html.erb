@@ -1,0 +1,6 @@
+<% unless @user.user_group.nil? %>
+  <tr>
+    <th>User Group:</th>
+    <td><%= @user.user_group.name %></td>
+  </tr>
+<% end %>

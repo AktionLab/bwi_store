@@ -43,8 +43,28 @@ Deface::Override.new(:virtual_path  => 'admin/shared/_tabs',
 
 Deface::Override.new(:virtual_path  => 'admin/users/_form',
                      :insert_after  => "[data-hook='admin_user_form_roles']",
-                     :partial       => "admin/users/user_group",
+                     :partial       => "admin/users/user_group_form_field",
                      :name          => 'admin_user_groups_user_form')
+
+Deface::Override.new(:virtual_path  => 'admin/users/index',
+                     :insert_before => "[data-hook='admin_users_index_header_actions']",
+                     :partial       => 'admin/users/user_group_index_header',
+                     :name          => 'user_group_index_header')
+
+Deface::Override.new(:virtual_path  => 'admin/users/index',
+                     :insert_before => "[data-hook='admin_users_index_row_actions']",
+                     :partial       => 'admin/users/user_group_index_row',
+                     :name          => 'user_group_index_row')
+
+Deface::Override.new(:virtual_path  => 'admin/users/index',
+                     :insert_before => "[data-hook='admin_users_index_search_buttons']",
+                     :partial       => 'admin/users/user_search_user_group',
+                     :name          => 'user_search_user_group')
+
+Deface::Override.new(:virtual_path  => 'admin/users/show',
+                     :insert_after  => "[data-hook='roles']",
+                     :partial       => 'admin/users/show_user_group',
+                     :name          => 'show_user_group')
 
 Deface::Override.new(:virtual_path  => 'products/_cart_form',
                      :insert_after  => 'span.variant-description',
