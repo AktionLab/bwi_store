@@ -1,5 +1,6 @@
 BwiStore::Application.routes.draw do
-  root :to => 'taxons#show', :id => 'brand'
+  root :to => redirect('/about')
+  #root :to => 'taxons#show', :id => 'brand'
   namespace :admin do
     resources :flexi_shipping_rates
     resources :user_groups do
