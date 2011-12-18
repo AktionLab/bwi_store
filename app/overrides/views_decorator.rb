@@ -46,3 +46,8 @@ Deface::Override.new(:virtual_path  => 'admin/users/_form',
                      :partial       => "admin/users/user_group",
                      :name          => 'admin_user_groups_user_form')
 
+Deface::Override.new(:virtual_path  => 'products/_cart_form',
+                     :insert_after  => 'span.variant-description',
+                     :partial       => 'products/show_variant_quantity',
+                     :name          => 'show_variant_quantity')
+
