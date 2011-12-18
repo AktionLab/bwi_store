@@ -1,3 +1,4 @@
+# Shared
 Deface::Override.new(:virtual_path  => "shared/_products",
                      :replace       => "[data-hook='products_list_item']",
                      :partial       => "shared/product_info",
@@ -10,6 +11,7 @@ Deface::Override.new(:virtual_path  => "shared/_taxonomies",
                      :name          => "make_taxon_root_linkable",
                      :disabled      => false)
 
+# Checkout
 Deface::Override.new(:virtual_path  => 'checkout/_confirm',
                      :insert_top    => "[data-hook='buttons']",
                      :partial       => 'checkout/continue_shopping_button',
@@ -25,22 +27,37 @@ Deface::Override.new(:virtual_path  => 'checkout/_payment',
                      :partial       => 'checkout/continue_shopping_button',
                      :name          => 'payment_checkout_shopping_button')
 
+# Products
 Deface::Override.new(:virtual_path  => 'products/_cart_form',
                      :insert_bottom => 'dl#product-price',
                      :partial       => 'products/sku_with_product_price',
                      :name          => 'cart_form_sku_with_product_price')
 
+Deface::Override.new(:virtual_path  => 'products/_cart_form',
+                     :insert_after  => 'span.variant-description',
+                     :partial       => 'products/show_variant_quantity',
+                     :name          => 'show_variant_quantity')
+
+# Orders
 Deface::Override.new(:virtual_path  => 'orders/show',
                      :insert_before => 'div#order > p',
                      :partial       => 'orders/return_policy',
                      :name          => 'orders_return_policy')
 
+# Taxon
+Deface::Override.new(:virtual_path  => 'taxons/_taxon',
+                     :insert_bottom => "[data-hook='taxon']",
+                     :partial       => 'taxons/taxon_child_link',
+                     :name          => 'taxon_child_link')
+
+# Admin/Shared
 Deface::Override.new(:virtual_path  => 'admin/shared/_tabs',
                      :insert_after  => "code[erb-loud]:contains(':users')",
                      :partial       => 'admin/shared/user_groups_tab',
                      :name          => 'admin_user_groups_tab',
                      :original      => '<%= tab :users %>')
 
+# Admin/Users
 Deface::Override.new(:virtual_path  => 'admin/users/_form',
                      :insert_after  => "[data-hook='admin_user_form_roles']",
                      :partial       => "admin/users/user_group_form_field",
@@ -65,9 +82,4 @@ Deface::Override.new(:virtual_path  => 'admin/users/show',
                      :insert_after  => "[data-hook='roles']",
                      :partial       => 'admin/users/show_user_group',
                      :name          => 'show_user_group')
-
-Deface::Override.new(:virtual_path  => 'products/_cart_form',
-                     :insert_after  => 'span.variant-description',
-                     :partial       => 'products/show_variant_quantity',
-                     :name          => 'show_variant_quantity')
 
