@@ -462,7 +462,7 @@ a {
 	padding-right:  80px;
 	width: 850px;
 	margin: 0 auto;
-	overflow: hidden;
+	overflow: visible;
 	display: block;
 	min-height:100px;
  	height:auto !important;
@@ -705,7 +705,8 @@ h3.taxonomy-root {
 }
 
 div#login-bar-one {
-	display: inline;
+  margin-top: 8px;
+	float:right;
 }
 
 div#login-bar-two {

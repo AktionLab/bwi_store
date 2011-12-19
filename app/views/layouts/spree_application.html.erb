@@ -10,12 +10,17 @@
 		<div class="container">
 			<%= logo %>
 			<div id="login-bar-one">
-				<ul id="nav-bar">
+				<ul id="nav" class="sf-menu">
 					<li>
-						<%= link_to t("store") , root_path %>
+						<%= link_to t("home") , root_path %>
 					</li>
 					<li>
 						<%= link_to 'About', '/about' %>
+            <ul>
+							<li><a href="#">Link 1</a></li>	
+							<li><a href="#">Link 2</a></li>
+							<li><a href="#">Link 3</a></li>
+						</ul>
 					</li>
 					<li>
 						<%= link_to 'Custom Order', '/custom-orders' %>

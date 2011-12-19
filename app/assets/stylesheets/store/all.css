@@ -12,4 +12,6 @@
 
  *= require_self
  *= require store/screen
+ *= require store/superfish
+ *= require store/superfish-navbar
 */

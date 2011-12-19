@@ -11,4 +11,6 @@
 //= require store/spree_dash
 //= require store/spree_promo
 
-//= require_tree .
+//= require store/superfish.js
+//= require store/supersubs.js
+//= require store/bwi.js
