@@ -1,26 +1,79 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
-    }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
-  </style>
+<!doctype html>
+<head data-hook="inside_head">
+	<%= render :partial => 'shared/head'%>
+	<% @body_class ||= content_for?(:sidebar) ? 'two-col' : 'one-col' %>
 </head>
+<!-- End Head -->
 
-<body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <h1>The page you were looking for doesn't exist.</h1>
-    <p>You may have mistyped the address or the page may have moved.</p>
-  </div>
+<body class="<%= @body_class %>" id="<%= @body_id %>">
+	<div id="header" class="container_bg">
+		<div class="container">
+			<%= logo %>
+			<div id="login-bar-one">
+				<ul id="nav" class="sf-menu">
+					<li>
+						<%= link_to t("home") , root_path %>
+					</li>
+					<li>
+						<%= link_to 'About', '/about' %>
+            <ul>
+							<li><a href="#">Link 1</a></li>	
+							<li><a href="#">Link 2</a></li>
+							<li><a href="#">Link 3</a></li>
+						</ul>
+					</li>
+					<li>
+						<%= link_to 'Custom Order', '/custom-orders' %>
+					</li>
+					<li>
+						<%= link_to 'Contact Us', '/contact-us' %>
+					</li>
+					<% if current_user %>
+						<li><%= link_to t('my_account'), account_path %></li>
+	  					<li><%= link_to t('logout'), destroy_user_session_path %></li>
+						<% else %>
+					<li><%= link_to t('log_in'), login_path %></li>
+					<% end %>
+
+					<li class="cart-indicator">
+						<%= link_to_cart %>
+					</li>
+				</ul>
+			</div>
+			<div id="login-bar-two">
+				<ul id="nav-bar-two">
+					<li>
+						<%= render 'shared/search' %>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- End Header -->
+
+	<div id="wrapper" class="container">
+		<% if content_for?(:sidebar) %>
+		<div id="sidebar" data-hook data-layer="1">
+			<%= yield :sidebar %>
+		</div>
+		<% end %>
+
+		<div id="content">
+			<%= breadcrumbs(@taxon) if @taxon %>
+			<% if flash.notice %>
+			<div class="flash notice">
+				<%= flash.notice %>
+			</div>
+			<% end %>
+			<% if flash[:error] %>
+			<div class="flash errors">
+				<%= flash[:error] %>
+			</div>
+			<% end %>
+			<h1>Page Not Found</h1>
+			<p>Sorry, the page you're looking for doesn't exist.</p>
+		</div>
+		<%= render :partial => 'shared/footer'%>
+	</div>
 </body>
 </html>

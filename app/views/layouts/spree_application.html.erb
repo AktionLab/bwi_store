@@ -10,20 +10,37 @@
 		<div class="container">
 			<%= logo %>
 			<div id="login-bar-one">
-				<ul id="nav" class="sf-menu">
-					<li>
-						<%= link_to t("home") , root_path %>
-					</li>
+				<ul id="nav" class="sf-menu">	
 					<li>
 						<%= link_to 'About', '/about' %>
             <ul>
-							<li><a href="#">Link 1</a></li>	
-							<li><a href="#">Link 2</a></li>
-							<li><a href="#">Link 3</a></li>
+							<li><%= link_to 'A Better Way', '/a-better-way' %></li>	
+							<li><%= link_to 'Mission', '/mission' %></li>
+							<li><%= link_to 'Vision', '/vision' %></li>
 						</ul>
 					</li>
+          <li>
+						<%= link_to 'Impact', '/impact' %>
+						<ul>
+							<li><%= link_to 'Suppliers', '/suppliers' %></li>
+							<li><%= link_to 'Meet our Friends', '/meet-our-friends' %></li>
+						</ul>
+					</li>
+          <li>
+						<%= link_to 'Join Us', '/join-us' %>
+						<ul>
+							<li><%= link_to 'Become', '/become' %></li>
+							<li><%= link_to 'Book', '/book' %></li>
+							<li><%= link_to 'Buy Better Club', '/buy-better-club' %></li>
+						</ul>
 					<li>
-						<%= link_to 'Custom Order', '/custom-orders' %>
+						<%= link_to 'Custom Orders', '/custom-orders' %>
+						<ul>
+							<li><%= link_to 'Jute Bag', '/jute-bag' %></li>
+							<li><%= link_to 'Cotton Bag', '/cotton-bag' %></li>
+							<li><%= link_to 'Organic Tee', '/organic-tee' %></li>
+							<li><%= link_to 'Get a quote', '/get-a-quote' %></li>
+						</ul>
 					</li>
 					<li>
 						<%= link_to 'Contact Us', '/contact-us' %>
