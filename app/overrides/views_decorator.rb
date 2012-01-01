@@ -44,6 +44,11 @@ Deface::Override.new(:virtual_path  => 'checkout/_payment',
                      :partial       => 'checkout/payment_method_description',
                      :name          => 'payment_method_description')
 
+Deface::Override.new(:virtual_path  => 'checkout/_payment',
+                     :insert_before => "[data-hook='buttons']",
+                     :partial       => 'checkout/how_did_you_hear',
+                     :name          => 'how_did_you_hear_about_us')
+
 # Products
 Deface::Override.new(:virtual_path  => 'products/_cart_form',
                      :insert_bottom => 'dl#product-price',
