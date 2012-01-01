@@ -12,6 +12,14 @@ GIT
       spree_core (>= 0.70.1)
 
 GIT
+  remote: git://github.com/spree/spree_editor.git
+  revision: 229233eefb3e658a20333f831e7d7b2ba484ca15
+  branch: master
+  specs:
+    spree_editor (0.50.1)
+      spree_core (>= 0.70.0)
+
+GIT
   remote: http://github.com/BZLabs/spree-batch-products.git
   revision: bb201587712d6a9b9ddd39358349ef7f2757ebae
   specs:
@@ -293,6 +301,7 @@ DEPENDENCIES
   sass-rails (~> 3.1.4)
   spree!
   spree_batch_products!
+  spree_editor!
   spree_flexi_rate_shipping!
   spree_static_content!
   therubyracer

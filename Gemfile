@@ -13,6 +13,8 @@ gem 'spree_batch_products', git: 'http://github.com/BZLabs/spree-batch-products.
 #gem 'spree_batch_products', path: '/home/chris/code/spree/spree-batch-products'
 gem 'memcache-client'
 
+gem 'spree_editor', git:'git://github.com/spree/spree_editor.git', branch: 'master'
+
 group :production do
   gem 'airbrake'
 end
