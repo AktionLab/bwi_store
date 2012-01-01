@@ -10,35 +10,7 @@
 		<div class="container">
 			<%= logo %>
 			<div id="login-bar-one">
-				<ul id="nav" class="sf-menu">
-					<li>
-						<%= link_to t("home") , root_path %>
-					</li>
-					<li>
-						<%= link_to 'About', '/about' %>
-            <ul>
-							<li><a href="#">Link 1</a></li>	
-							<li><a href="#">Link 2</a></li>
-							<li><a href="#">Link 3</a></li>
-						</ul>
-					</li>
-					<li>
-						<%= link_to 'Custom Order', '/custom-orders' %>
-					</li>
-					<li>
-						<%= link_to 'Contact Us', '/contact-us' %>
-					</li>
-					<% if current_user %>
-						<li><%= link_to t('my_account'), account_path %></li>
-	  					<li><%= link_to t('logout'), destroy_user_session_path %></li>
-						<% else %>
-					<li><%= link_to t('log_in'), login_path %></li>
-					<% end %>
-
-					<li class="cart-indicator">
-						<%= link_to_cart %>
-					</li>
-				</ul>
+				<%= render :partial => 'shared/menu' %>
 			</div>
 			<div id="login-bar-two">
 				<ul id="nav-bar-two">
