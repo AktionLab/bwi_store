@@ -11,7 +11,19 @@ Deface::Override.new(:virtual_path  => "shared/_taxonomies",
                      :name          => "make_taxon_root_linkable",
                      :disabled      => false)
 
-# Checkout
+Deface::Override.new(:virtual_path  => 'shared/_order_details',
+                     :insert_before => 'th.price',
+                     :partial       => 'shared/order_details_sku_table_header',
+                     :name          => 'add_sku_table_header_to_order_details',
+                     :disabled      => false)
+
+Deface::Override.new(:virtual_path  => 'shared/_order_details',
+                     :insert_before => 'td.price',
+                     :partial       => 'shared/order_details_sku_table_cell',
+                     :name          => 'add_sku_table_cell_to_order_details',
+                     :disabled      => false)
+
+#Checkout
 Deface::Override.new(:virtual_path  => 'checkout/_confirm',
                      :insert_top    => "[data-hook='buttons']",
                      :partial       => 'checkout/continue_shopping_button',
