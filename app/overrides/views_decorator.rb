@@ -60,6 +60,11 @@ Deface::Override.new(:virtual_path  => 'products/_cart_form',
                      :partial       => 'products/show_variant_quantity',
                      :name          => 'show_variant_quantity')
 
+Deface::Override.new(:virtual_path  => 'products/_cart_form',
+                     :replace       => 'dl#product-price > dd > span.price.selling',
+                     :partial       => 'products/user_group_pricing',
+                     :name          => 'user_group_product_price')
+
 # Orders
 Deface::Override.new(:virtual_path  => 'orders/show',
                      :insert_before => 'div#order > p',

@@ -1,0 +1,16 @@
+<% if user_group_price_diff(@product) %>
+  <span class="price selling user-group-price-diff">
+    <span class="regular-price">
+      <%= format_price(@product.variants.first.read_attribute(:price)) %>
+    </span>
+    <span class="user-group-price"> 
+      <%= format_price(@product.variants.first.price) %>
+    </span><br />
+    <span class="user-group-savings">
+      You Save: <%= format_price(user_group_price_diff(@product)) %>
+    </span>
+  </span>
+<% else %>
+  <span class="price selling"><%= product_price(@product) %></span>
+<% end %>
+

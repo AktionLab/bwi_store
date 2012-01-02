@@ -12,7 +12,7 @@ Variant.class_eval do
         variant.read_attribute(:price)
       end
     else
-      variant.read_attribute(:price) * (1.0 - part)
+      variant.read_attribute(:price) * part
     end
   end
 

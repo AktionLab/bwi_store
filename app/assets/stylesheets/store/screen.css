@@ -1145,6 +1145,10 @@ p button img {
 	color: #2e6ab1;
 }
 
+.price.selling .regular-price {
+  text-decoration: line-through;
+}
+
 #product-details .price.selling {
 	font-size: 1.5em;
 }
